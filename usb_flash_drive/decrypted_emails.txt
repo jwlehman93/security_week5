@@ -1,0 +1,6 @@
+1. The SQL injection we discussed is in place. Just search for an agent.
+2. (Still encrypted) Missing double agent private key
+3. Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
+4. (Still encrypted) Missing double agent private key
+5. Let me know before you go inside. I'll create a distraction. - Austin (unverified)
+6. Let me know before you go inside. I'll create a distraction. - Natasha (verified)
