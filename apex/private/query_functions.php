@@ -6,7 +6,7 @@
     $result = find_agent_by_id($my_id);
     return db_fetch_assoc($result);
   }
-  
+
   //
   // AGENT QUERIES
   //
@@ -24,11 +24,11 @@
   function find_agent_by_id($id=0) {
     global $db;
     $sql = "SELECT * FROM agents ";
-    $sql .= "WHERE id='" . $id . "';";
+    $sql .= "WHERE id='" . db_escape($db, $id) . "';";
     $result = db_query($db, $sql);
     return $result;
   }
-  
+
   function validate_agent($agent, $errors=array()) {
     if (is_blank($agent['codename'])) {
       $errors[] = "Codename cannot be blank.";
@@ -46,7 +46,7 @@
 
     return $errors;
   }
-  
+
   // Add a new agent to the table
   // Either returns true or an array of errors
   function insert_agent($agent) {
@@ -76,12 +76,12 @@
       exit;
     }
   }
-  
+
 
   //
   // MESSAGE QUERIES
   //
-  
+
   // Find messages for a recipient, ordered by created date
   function find_messages_for($recipient_id) {
     global $db;

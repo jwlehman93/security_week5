@@ -9,22 +9,22 @@
   $decrypted_text = '';
 
   if(isset($_POST['submit'])) {
-  
+
     if(isset($_POST['encode_key'])) {
-    
+
       // This is an encode request
       $plain_text = isset($_POST['plain_text']) ? $_POST['plain_text'] : nil;
       $encode_key = isset($_POST['encode_key']) ? $_POST['encode_key'] : nil;
       $encrypted_text = key_encrypt($plain_text, $encode_key);
       $cipher_text = $encrypted_text;
-    
+
     } else {
-    
+
       // This is a decode request
       $cipher_text = isset($_POST['cipher_text']) ? $_POST['cipher_text'] : nil;
       $decode_key = isset($_POST['decode_key']) ? $_POST['decode_key'] : nil;
       $decrypted_text = key_decrypt($cipher_text, $decode_key);
-    
+
     }
   }
 
@@ -40,12 +40,12 @@
     <link rel="stylesheet" media="all" href="includes/styles.css" />
   </head>
   <body>
-    
+
     <a href="index.php">Main menu</a>
     <br/>
 
     <h1>Symmetric Encryption</h1>
-    
+
     <div id="encoder">
       <h2>Encrypt</h2>
 
@@ -58,23 +58,23 @@
         </div>
         <div>
           <label for="plain_text">Plain text</label>
-          <textarea name="plain_text"><?php echo $plain_text; ?></textarea>
+          <textarea name="plain_text"><?php echo h($plain_text); ?></textarea>
         </div>
         <div>
           <label for="encode_key">Key</label>
-          <input type="text" name="encode_key" value="<?php echo $encode_key; ?>" />
+          <input type="text" name="encode_key" value="<?php echo h($encode_key); ?>" />
         </div>
         <div>
           <input type="submit" name="submit" value="Encrypt">
         </div>
       </form>
-    
-      <div class="result"><?php echo $encrypted_text; ?></div>
+
+      <div class="result"><?php echo h($encrypted_text); ?></div>
       <div style="clear:both;"></div>
     </div>
-    
+
     <hr />
-    
+
     <div id="decoder">
       <h2>Decrypt</h2>
 
@@ -87,20 +87,20 @@
         </div>
         <div>
           <label for="cipher_text">Cipher text</label>
-          <textarea name="cipher_text"><?php echo $cipher_text; ?></textarea>
+          <textarea name="cipher_text"><?php echo h($cipher_text); ?></textarea>
         </div>
         <div>
           <label for="decode_key">Key</label>
-          <input type="text" name="decode_key" value="<?php echo $decode_key; ?>" />
+          <input type="text" name="decode_key" value="<?php echo h($decode_key); ?>" />
         </div>
         <div>
           <input type="submit" name="submit" value="Decrypt">
         </div>
       </form>
 
-      <div class="result"><?php echo $decrypted_text; ?></div>
+      <div class="result"><?php echo h($decrypted_text); ?></div>
       <div style="clear:both;"></div>
     </div>
-    
+
   </body>
 </html>

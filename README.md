@@ -47,7 +47,7 @@ The following **required** functionality is completed:
 The following objectives are **optional**:
 
 * Bonus Objective 1\.
-  * [ ]  Track down the bugs in the code and fix them.
+  * [x]  Track down the bugs in the code and fix them.
 
 * Bonus Objective 2\.
   * [ ]  Write a report of your discoveries (longer than 300 characters).
