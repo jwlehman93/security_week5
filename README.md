@@ -61,10 +61,7 @@ The following objectives are **optional**:
   * [ ]  Add support for other symmetric algorithms.
 
 ## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<video src='walkthrough.webm' title='Video Walkthrough' alt='Video Walkthrough' />
+A video walkthrough of this assignment can be found [here](http://jeremycodesthings.com/week5)
 
 
 
